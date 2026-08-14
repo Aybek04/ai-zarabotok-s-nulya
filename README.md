@@ -1,27 +1,27 @@
-# ИИ с нуля — рабочий тулкит вместо очередного гайда по ChatGPT
+# AI From Scratch — a working toolkit, not another ChatGPT guide
 
-Большинство гайдов по ИИ учат «нажать кнопку в ChatGPT». Это не гайд с кнопками — это рабочий тулкит: как думать промптами и собирать из ИИ результат, который не палится роботом.
+Most AI guides teach you to "click a button in ChatGPT." This isn't a guide with buttons — it's a working toolkit: how to think in prompts and get AI results that don't read like a robot wrote them.
 
-Structured Claude / GitHub Copilot CLI skill: prompt-thinking formula, live-tone technique, ready-to-use prompt templates, and a playbook for packaging your first AI-based service.
+Structured Claude / GitHub Copilot CLI skill: prompt-thinking formula, human-tone technique, ready-to-use prompt templates, and a playbook for packaging your first AI-based service.
 
-## Что внутри
+## What's inside
 
-- Формула промпта из 5 частей — почему один и тот же ИИ даёт то воду, то ответ уровня специалиста
-- Приём живого тона — единственное, что отличает заметный ИИ-текст от неотличимого от человеческого
-- Готовые промпты на частые задачи
-- Разбор контент-плана, презентаций и визуала через ИИ — без дизайнерских навыков
-- Практическая часть про деньги: как упаковать первую ИИ-услугу — что продавать, где брать клиентов, как считать цену
+- The 5-part prompt formula — why the same AI gives you fluff one time and expert-level output the next
+- The human-tone trick — the one thing that separates obviously-AI text from text nobody can tell apart from a human's
+- 10 ready-to-use prompts for common tasks
+- Breaking down content plans, presentations, and visuals through AI — no design skills needed
+- The money part: how to package your first AI service — what to sell, where to find clients, how to price it
 
-## Формат
+## Format
 
-Структурированный skill для Claude Code / GitHub Copilot CLI (подключается одной командой) + текстовые файлы, которые можно читать и без ИИ.
+A structured skill for Claude Code / GitHub Copilot CLI (plugs in with one command) + plain text files you can read without AI too.
 
-## Получить полную версию
+## Get the full version
 
-Полный пак (SKILL.md, главы, банк промптов, шпаргалка) — на Gumroad:
+The full pack (SKILL.md, chapters, prompt bank, cheatsheet) — on Gumroad:
 
 **→ https://aybekj.gumroad.com/l/xvvtqv**
 
-## Лицензия
+## License
 
-Этот репозиторий — публичное описание продукта. Файлы skill'а не публикуются здесь, они доступны после покупки.
+This repository is a public product description only. The skill files themselves are not published here — they're available after purchase.
