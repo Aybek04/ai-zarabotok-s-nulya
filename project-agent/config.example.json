@@ -1,0 +1,14 @@
+{
+  "machine": "pc",
+  "brain_url": "http://127.0.0.1:8765",
+  "token": "ЗАМЕНИ-на-длинную-случайную-строку-одинаковую-на-обеих-машинах",
+  "scan_roots": ["~/Projects", "~/Desktop", "D:/dev"],
+  "scan_max_depth": 4,
+  "brain": {
+    "host": "0.0.0.0",
+    "port": 8765,
+    "model": "claude-haiku-4-5",
+    "history_turns": 30,
+    "rescan_minutes": 30
+  }
+}
