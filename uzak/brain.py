@@ -1,4 +1,4 @@
-"""«Мозг» — запускается ТОЛЬКО на компе. Хранит индекс проектов обеих машин,
+"""Мозг Узака — запускается ТОЛЬКО на компе. Хранит индекс проектов обеих машин,
 общую память и историю беседы, общается с Claude Haiku.
 
     python brain.py
@@ -22,7 +22,7 @@ DATA = HERE / "data"
 MAX_TOOL_STEPS = 12
 MAX_FILE_CHARS = 20_000
 
-SYSTEM_PROMPT = """Ты — личный ассистент пользователя по его проектам. Ты один «мозг», который живёт на его компе (pc),
+SYSTEM_PROMPT = """Тебя зовут Узак. Ты — личный ассистент пользователя по его проектам. У тебя один мозг, он живёт на его компе (pc),
 а говорить с тобой он может и с компа, и с ноутбука (laptop). Беседа общая: что обсуждали с ноутбука, ты помнишь и на компе.
 
 Что ты умеешь:
@@ -306,7 +306,7 @@ class Brain:
                     history.append({"role": "assistant",
                                     "content": [b.model_dump(mode="json", exclude_none=True) for b in resp.content]})
             except anthropic.AuthenticationError:
-                return "Мозг не может войти в Claude API: проверь ANTHROPIC_API_KEY на компе."
+                return "Узак не может войти в Claude API: проверь ANTHROPIC_API_KEY на компе."
             except anthropic.RateLimitError:
                 return "Упёрлись в лимит Claude API, попробуй через минуту."
             except anthropic.APIStatusError as e:
@@ -392,12 +392,12 @@ def main():
     utf8_console()
     cfg = load_config()
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        print("Внимание: ANTHROPIC_API_KEY не задан — мозг не сможет отвечать.")
+        print("Внимание: ANTHROPIC_API_KEY не задан — Узак не сможет отвечать.")
     brain = Brain(cfg)
     bcfg = cfg.get("brain", {})
     threading.Thread(target=rescan_loop, args=(brain, float(bcfg.get("rescan_minutes", 30))), daemon=True).start()
     host, port = bcfg.get("host", "0.0.0.0"), int(bcfg.get("port", 8765))
-    print(f"Мозг запущен на {host}:{port}, модель {brain.model}. Ctrl+C — остановить.")
+    print(f"Мозг Узака запущен на {host}:{port}, модель {brain.model}. Ctrl+C — остановить.")
     ThreadingHTTPServer((host, port), make_handler(brain, cfg["token"])).serve_forever()
 
 

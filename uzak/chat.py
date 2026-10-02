@@ -1,4 +1,4 @@
-"""Чат с мозгом. Работает и на компе, и на ноутбуке — везде одна и та же беседа.
+"""Чат с Узаком. Работает и на компе, и на ноутбуке — везде одна и та же беседа.
 
     python chat.py              # пересканировать проекты этой машины и начать беседу
     python chat.py --no-scan    # сразу в беседу
@@ -10,7 +10,7 @@ import urllib.error
 from common import call_brain, load_config, utf8_console
 from scanner import push, scan_config
 
-HELP = "Команды: /scan — обновить индекс этой машины, /status — что знает мозг, /reset — забыть беседу, /exit — выход"
+HELP = "Команды: /scan — обновить индекс этой машины, /status — что знает Узак, /reset — забыть беседу, /exit — выход"
 
 
 def ask(cfg, text):
@@ -29,9 +29,9 @@ def main():
     try:
         call_brain(cfg, "/health", timeout=10)
     except urllib.error.HTTPError as e:
-        raise SystemExit(f"Мозг ответил {e.code} — проверь token в config.json.")
+        raise SystemExit(f"Узак ответил {e.code} — проверь token в config.json.")
     except OSError as e:
-        raise SystemExit(f"Мозг недоступен по {cfg['brain_url']} ({e}). Комп включён и brain.py запущен?")
+        raise SystemExit(f"Узак недоступен по {cfg['brain_url']} ({e}). Комп включён и brain.py запущен?")
 
     if not args.no_scan:
         r = push(cfg, scan_config(cfg))
@@ -41,7 +41,7 @@ def main():
         print(ask(cfg, " ".join(args.question)))
         return
 
-    print(f"Мозг на связи. {HELP}")
+    print(f"Узак на связи. {HELP}")
     while True:
         try:
             text = input("\nты> ").strip()
@@ -63,9 +63,9 @@ def main():
             elif text in ("/help", "?"):
                 print(HELP)
             else:
-                print("\nмозг> " + ask(cfg, text))
+                print("\nУзак> " + ask(cfg, text))
         except OSError as e:
-            print(f"[связь с мозгом потеряна: {e}]")
+            print(f"[связь с Узаком потеряна: {e}]")
 
 
 if __name__ == "__main__":
